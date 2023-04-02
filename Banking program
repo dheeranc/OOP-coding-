@@ -1,0 +1,36 @@
+from abc import ABC, abstractmethod
+
+class Bank(ABC):
+    @abstractmethod
+    def deposit(self, amount):
+        pass
+
+    @abstractmethod
+    def withdraw(self, amount):
+        pass
+
+    @abstractmethod
+    def check_balance(self):
+        pass
+
+class CheckingAccount(Bank):
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Insufficient balance")
+
+    def check_balance(self):
+        return self.balance
+
+# Example usage:
+checking_account = CheckingAccount()
+checking_account.deposit(100)
+checking_account.withdraw(50)
+print(checking_account.check_balance())  # should print 50
