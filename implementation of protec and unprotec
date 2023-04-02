@@ -1,0 +1,8 @@
+contact1 = Contact("John", "john@gmail.com", "1234567890")
+print(contact1.name)                    # Output: John
+print(contact1.get_email())             # Output: john@gmail.com
+print(contact1.get_phone_number())      # Output: 1234567890
+
+contact1.set_email("john@gmail.com")
+contact1.set_phone_number("1234567890")
+print(contact1)                         # Output: John, john@gmail.com, 1234567890
