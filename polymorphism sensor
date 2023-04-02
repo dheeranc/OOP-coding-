@@ -30,7 +30,7 @@ def read_sensor_data(sensor):
 # Reprsent the various sensor objects
 speed_sensor = SpeedSensor("vehicle speed")
 motion_sensor = MotionSensor("motion")
-gps_sensor = "2VSensor("V2V")
+vv_sensor = V2VSensor("V2V")
 
 # Uses polymorphism to read data from each sensor object
 sensor_list = [speed_sensor, motion_sensor, vv_sensor]
