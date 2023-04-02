@@ -1,0 +1,22 @@
+class Contact:
+    def __init__(self, name, email, phone_number):
+        self.name = name   #unprotected variable
+        self._email = email   #protected variable 
+        self._phone_number = phone_number   #protected variable 
+
+    def __str__(self):
+        return f"{self.name}, {self._email}, {self._phone_number}"
+    
+    def set_email(self, new_email):
+        if "@" in new_email:
+            self._email = new_email
+
+    def set_phone_number(self, new_phone_number):
+        if len(str(new_phone_number)) == 10:
+            self._phone_number = new_phone_number
+    
+    def get_email(self):
+        return self._email
+    
+    def get_phone_number(self):
+        return self._phone_number
