@@ -1,0 +1,33 @@
+class Employee:
+    def __init__(self, name, age, salary):
+        self.name = name  # unprotected variable
+        self._age = age    #Protected variable
+        self._salary = salary   #protected variable 
+        self._annual_leave = 15  #protected variable 
+
+    def book_annual_leave(self, days):
+        if days > self._annual_leave:
+            print("Insufficient annual leave balance")
+        else:
+            self._annual_leave -= days
+            print(f"{days} days annual leave booked successfully")
+
+    def get_age(self):
+        return self._age
+
+    def get_salary(self):
+        return self._salary
+
+    def get_annual_leave(self):
+        return self._annual_leave
+
+employee1 = Employee("John Doe", 23, 40000)
+
+print(f"Employee name: {employee1.name}")
+print(f"Employee age: {employee1.get_age()}")
+print(f"Employee salary: {employee1.get_salary()}")
+print(f"Employee annual leave balance: {employee1.get_annual_leave()}")
+
+employee1.book_annual_leave(5)
+
+print(f"Employee annual leave balance: {employee1.get_annual_leave()}")
