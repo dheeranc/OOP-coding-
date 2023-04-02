@@ -1,0 +1,40 @@
+# Define a Sensor class
+class Sensor:
+    def __init__(self, sensor_type):
+        self.sensor_type = sensor_type
+
+    def read_sensor(self):
+        pass
+
+# Define child classes of Sensor for specific sensor types
+class SpeedSensor(Sensor):
+    def read_sensor(self):
+        # Code to read vehicle speed sensor data
+        pass
+
+class MotionSensor(Sensor):
+    def read_sensor(self):
+        # Code to read motion sensor data
+        pass
+
+class GPSSensor(Sensor):
+    def read_sensor(self):
+        # Code to read GPS sensor data
+        pass
+
+# Define a function that takes a Sensor object and reads its data
+def read_sensor_data(sensor):
+    sensor_data = sensor.read_sensor()
+    return sensor_data
+
+# Instantiate various sensor objects
+speed_sensor = SpeedSensor("vehicle speed")
+motion_sensor = MotionSensor("motion")
+gps_sensor = GPSSensor("GPS")
+
+# Use polymorphism to read data from each sensor object
+sensor_list = [speed_sensor, motion_sensor, gps_sensor]
+
+for sensor in sensor_list:
+    sensor_data = read_sensor_data(sensor)
+    print(f"{sensor.sensor_type} data: {sensor_data}")
