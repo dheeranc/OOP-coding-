@@ -1,0 +1,31 @@
+class Navigation:
+    def calculate_distance(self, source, destination):
+        pass
+
+class GPSNavigation(Navigation):
+    def calculate_distance(self, source, destination):
+        # code to calculate distance using GPS coordinates
+        return distance
+
+class MapNavigation(Navigation):
+    def calculate_distance(self, source, destination):
+        # code to calculate distance using map data
+        return distance
+
+class NavigationController:
+    def __init__(self, navigation):
+        self.navigation = navigation
+    
+    def navigate(self, source, destination):
+        distance = self.navigation.calculate_distance(source, destination)
+        # code to navigate the car based on the distance calculated
+        return "Navigating {} km to destination.".format(distance)
+
+# Example
+gps_navigation = GPSNavigation()
+nav_controller = NavigationController(gps_navigation)
+print(nav_controller.navigate("Current Location", "Destination"))
+
+map_navigation = MapNavigation()
+nav_controller = NavigationController(map_navigation)
+print(nav_controller.navigate("Current Location", "Destination"))
