@@ -17,9 +17,9 @@ class MotionSensor(Sensor):
         # Code to read motion sensor data
         pass
 
-class GPSSensor(Sensor):
+class V2VSensor(Sensor):
     def read_sensor(self):
-        # Code to read GPS sensor data
+        # Code to read V2V sensor data
         pass
 
 # Define the functions that uses Sensor object and reads its data
@@ -30,10 +30,10 @@ def read_sensor_data(sensor):
 # Reprsent the various sensor objects
 speed_sensor = SpeedSensor("vehicle speed")
 motion_sensor = MotionSensor("motion")
-gps_sensor = GPSSensor("GPS")
+gps_sensor = "2VSensor("V2V")
 
 # Uses polymorphism to read data from each sensor object
-sensor_list = [speed_sensor, motion_sensor, gps_sensor]
+sensor_list = [speed_sensor, motion_sensor, vv_sensor]
 
 for sensor in sensor_list:
     sensor_data = read_sensor_data(sensor)
