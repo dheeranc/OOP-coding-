@@ -1,0 +1,24 @@
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.car_dict = {
+            'make': self.make,
+            'model': self.model,
+            'year': self.year
+        }
+    
+    def get_car_dict(self):
+        return self.car_dict
+
+# create an instance of Car
+my_car = Car('Ford', 'Focus', 2012)
+
+# access the car_dict attribute
+car_dict = my_car.get_car_dict()
+
+# use the dictionary methods
+print(car_dict.items())  # dict_items([('make', 'Ford'), ('model', 'Focus'), ('year', 2012)])
+print(car_dict.keys())  # dict_keys(['make', 'model', 'year'])
+print(car_dict.values())  # dict_values(['Ford', 'Focus', 2012])
