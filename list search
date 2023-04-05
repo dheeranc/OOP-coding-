@@ -1,0 +1,18 @@
+# Define a list of names
+names = ["Alice", "Bob", "Charlie", "Dave", "Eve"]
+
+# Prompt the user to enter a name to search for
+search_name = input("Enter a name to search for: ")
+
+# Perform a linear search for the name
+found = False
+for name in names:
+    if name == search_name:
+        found = True
+        break
+
+# Display the result of the search
+if found:
+    print(search_name, "was found in the list.")
+else:
+    print(search_name, "was not found in the list.")
