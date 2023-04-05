@@ -1,0 +1,44 @@
+
+# Define four basic mathematical functions: add, subtract, multiply, divide
+
+def add(x, y): 
+return x + y 
+def subtract(x, y): 
+return x - y 
+def multiply(x, y): 
+return x * y 
+def divide(x, y): 
+return x / y 
+
+# Prompt the user of the program to choose the mathamtical operation 
+print("Select operation.") 
+print("1.Add") 
+print("2.Subtract") 
+print("3.Multiply") 
+print("4.Divide") 
+
+# Loop until a valid choice is chosen 
+while True: 
+choice = input("Enter choice(1/2/3/4): ") 
+
+# Validate the user choice 
+
+if choice in ('1', '2', '3', '4'): 
+
+# prompt user to enter two numbers 
+num1 = float(input("Enter first number: ")) 
+num2 = float(input("Enter second number: ")) 
+
+# perform the selected operation on these numbers and print the results
+if choice == '1': print(num1, "+", num2, "=", add(num1, num2)) 
+elif choice == '2': print(num1, "-", num2, "=", subtract(num1, num2)) 
+elif choice == '3': print(num1, "*", num2, "=", multiply(num1, num2)) 
+elif choice == '4': print(num1, "/", num2, "=", divide(num1, num2)) 
+
+
+ break the while loop if answer is no next_calculation = input("Let's do next calculation? (yes/no): ") #prompt use to perform another calculation
+#if the user does not want to then exit the loop 
+if next_calculation == "no": 
+break 
+#if the user has input an invalid choice, display the error message and repeat loop 
+else: print("Invalid Input")
